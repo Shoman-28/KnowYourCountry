@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 
 const CountryList = (props) => {
@@ -12,7 +12,7 @@ const CountryList = (props) => {
                     <Image source={flag} style={cardImage} />
                     <Text style={cardText}>Name: {name}</Text>
                     <Text style={cardText}>Capital: {capital}</Text>
-                    <Button title = "View Details"></Button>
+                    <Button as={Link} to={`/country/${name}`} title = "View Details"></Button>
                     </TouchableOpacity>
                 </View>
         </div>
