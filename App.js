@@ -19,16 +19,13 @@ export default function App() {
                 <Switch>
                     <Route exact path="/">
                         <Home />
-
                     </Route>
-
+                    <Route  path='/country/:countryName' component={CountryDetails}/>
+                      
                     <Route path="*">
                         <NotFound></NotFound>
-
                     </Route>
-                    <Route path='/country/:countryName'>
-                       <CountryDetails></CountryDetails>
-                    </Route>
+                   
                 </Switch>
                 <StatusBar style='auto' />
             </View>
