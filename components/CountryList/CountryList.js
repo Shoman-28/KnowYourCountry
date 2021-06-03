@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 
+import { useHistory } from "react-router-dom";
 const CountryList = (props) => {
     let {container,cardText,card,cardImage} = styles;
-    const { name, flag, capital } = props.country
+    let history = useHistory();
+    const { name, flag, capital  } = props.country
     return (
         <div>
             <View style={container}>
@@ -12,7 +14,7 @@ const CountryList = (props) => {
                     <Image source={flag} style={cardImage} />
                     <Text style={cardText}>Name: {name}</Text>
                     <Text style={cardText}>Capital: {capital}</Text>
-                    <Button as={Link} to={`/country/${name}`} title = "View Details"></Button>
+                    <Button  onPress={()=>history.push(`/country/${name}`)} title = "View Details"></Button>
                     </TouchableOpacity>
                 </View>
         </div>
