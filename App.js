@@ -6,7 +6,7 @@ import Home from './components/Home/Home';
 export default function App() {
     return (
         <View style={styles.container}>
-            <Text>Know Your Country</Text>
+            <Text>Know Your Country Name</Text>
             <Home />
             <StatusBar style='auto' />
         </View>
