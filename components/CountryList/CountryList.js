@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const CountryList = (props) => {
     let {container,cardText,card,cardImage} = styles;
     let history = useHistory();
-    const { name, flag, capital } = props.country
+    const { name, flag, capital  } = props.country
     return (
         <div>
             <View style={container}>

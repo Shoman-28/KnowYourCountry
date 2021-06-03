@@ -20,6 +20,9 @@ const CountryDetails = () => {
                     <Image source={countryInfo.flag} style={cardImage} />
                     <Text style={cardText}>Name: {countryInfo.name}</Text>
                     <Text style={cardText}>Capital: {countryInfo.capital}</Text>
+                    <Text style={cardText}>population: {countryInfo.population}</Text>
+                    <Text style={cardText}>Region: {countryInfo.Region}</Text>
+
                     </TouchableOpacity>
                 </View>
     );
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
         borderRadius:"1px solid black",
         marginBottom:10,
         marginLeft:"2%",
-        width:'96%',
+        width:'400px',
         shadowColor:'#000',
         shadowOpacity:0.2,
         shadowOffset:{
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
 
     },
     cardImage:{
-       
+      
         padding:10,
         margin:"5%",
         height:200,
