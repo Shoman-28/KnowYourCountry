@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 
 const CountryList = (props) => {
     let {container,cardText,card,cardImage} = styles;
@@ -10,8 +10,9 @@ const CountryList = (props) => {
             <View style={container}>
                     <TouchableOpacity style={card}>
                     <Image source={flag} style={cardImage} />
-                    <Text style={cardText}>{name}</Text>
-                    <Text style={cardText}>{capital}</Text>
+                    <Text style={cardText}>Name: {name}</Text>
+                    <Text style={cardText}>Capital: {capital}</Text>
+                    <Button title = "View Details"></Button>
                     </TouchableOpacity>
                 </View>
         </div>
@@ -25,25 +26,28 @@ const styles = StyleSheet.create({
         fontSize:16,
         padding:10,
         textAlign:"center",
-        color: "green",
+        color: "red",
         fontWeight:"bold"
         
     },
     card:{
         backgroundColor: '#fff',
+        borderRadius:"1px solid black",
         marginBottom:10,
         marginLeft:"2%",
         width:'96%',
         shadowColor:'#000',
-        shadowOpacity:0.5,
+        shadowOpacity:0.2,
         shadowOffset:{
-            width:3,
-            height:3
+            width:5,
+            height:5
         }
 
     },
     cardImage:{
-        width: '100%',
+       
+        padding:10,
+        margin:"5%",
         height:200,
         resizeMode:'cover',
 
