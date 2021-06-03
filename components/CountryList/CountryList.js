@@ -9,29 +9,25 @@ import {
   Button,
 } from "react-native";
 
+import { useHistory } from "react-router-dom";
 const CountryList = (props) => {
-  let { container, cardText, card, cardImage } = styles;
-  const { name, flag, capital, id } = props.country;
 
-  // const hendelAdProduct = (product) => {
-  //     const newCart = [...cart, product];
-  //     setCart(newCart);
-  //     const sameProduct = newCart.filter((pd) => pd.key === product.key);
-  //     const count = sameProduct.length;
-  //     addToDatabaseCart(product.key, count);
-  // };
-  return (
-    <View style={container}>
-      <TouchableOpacity style={card}>
-        <Image source={flag} style={cardImage} />
-        <Text style={cardText}>Name: {name}</Text>
-        <Text style={cardText}>Capital: {capital}</Text>
+    let {container,cardText,card,cardImage} = styles;
+    let history = useHistory();
+    const { name, flag, capital  } = props.country
+    return (
+        <div>
+            <View style={container}>
+                    <TouchableOpacity style={card}>
+                    <Image source={flag} style={cardImage} />
+                    <Text style={cardText}>Name: {name}</Text>
+                    <Text style={cardText}>Capital: {capital}</Text>
+                    <Button  onPress={()=>history.push(`/country/${name}`)} title = "View Details"></Button>
+                    </TouchableOpacity>
+                </View>
+        </div>
+    );
 
-        <Button as={Link} to={`/country/${name}`} title="View Details"></Button>
-        {/* <Button  onClick={() => props.hendelAdProduct(props.product)} title = "View"></Button> */}
-      </TouchableOpacity>
-    </View>
-  );
 };
 const styles = StyleSheet.create({
   container: {

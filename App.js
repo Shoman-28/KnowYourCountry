@@ -13,25 +13,22 @@ import CountryDetails from './components/CountryDetails/CountryDetails'
 export default function App() {
     return (
         <Router>
-            <View style={styles.container}>
-                <Text>Know Your Country Name</Text>
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                        <CountryDetails></CountryDetails>
-                    </Route>
-
-                    <Route path="*">
-                        <NotFound></NotFound>
-
-                    </Route>
-                    <Route path='/country/:countryName'>
-                       <CountryDetails></CountryDetails>
-                    </Route>
-                </Switch>
-                <StatusBar style='auto' />
-            </View>
-        </Router>
+        <View style={styles.container}>
+            <Text>Know Your Country Name</Text>
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route  path='/country/:countryName' component={CountryDetails}/>
+                  
+                <Route path="*">
+                    <NotFound></NotFound>
+                </Route>
+               
+            </Switch>
+            <StatusBar style='auto' />
+        </View>
+    </Router>
 
     );
 
