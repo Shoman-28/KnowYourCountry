@@ -16,7 +16,7 @@ const CountryList = (props) => {
     let history = useHistory();
     const { name, flag, capital  } = props.country
     return (
-        <div>
+     
             <View style={container}>
                     <TouchableOpacity style={card}>
                     <Image source={flag} style={cardImage} />
@@ -25,7 +25,7 @@ const CountryList = (props) => {
                     <Button  onPress={()=>history.push(`/country/${name}`)} title = "View Details"></Button>
                     </TouchableOpacity>
                 </View>
-        </div>
+      
     );
 
 };
